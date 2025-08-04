@@ -3,18 +3,18 @@ const input = document.getElementById("input");
 
 // Flag values
 const flag1 = "DARKLEAK{xavir_kale}";
-const flag2 = "DARKLEAK{blackriver_bank}";
-const flag3 = "DARKLEAK{SQL_INJECTION_COMPLETED_ACCESS_GRANTED}";
+const flag2 = "DARKLEAK{little_bobby_tables}";
+const flag3 = "DARKLEAK{metadata_reveals_all}";
 
 let phase = 1;
 
 let intro = [
-  "Welcome to the Executive Recuritments for CyberSecurity",
+  "Welcome to the Executive Recruitments for CyberSecurity",
   "This will determine your destiny in this DC X GDG",
-  "I am Mr.X ",
-  "My true name is in the open write fetch_message to get the file",
-  "But there is an issue my child nobody can ready it",
-  "Can You?",
+  "I am Mr.X",
+  "My true name is in the open. Type 'fetch_message' to get the file.",
+  "But there is an issue, my child... nobody can read it.",
+  "Can you?",
   ""
 ];
 
@@ -41,10 +41,31 @@ function handleCommand(cmd) {
   if (cmd === "fetch_message" && phase === 1) {
     print([
       "Downloading agent_message.txt...",
-      "Here's a little help : https://www.youtube.com/watch?v=jD6ZuQAPelg",
+      "Can you decrypt it?",
     ]);
     window.open("agent_message.txt", "_blank");
-  } 
+  }
+
+  else if (cmd === "sql_hint" && phase === 2) {
+    print([
+      "🧪 We're querying the wrong database... or are we?",
+      "Here's what we got back from the logs:",
+      "",
+      "🧠 This reminds me of someone. Bobby... Bobby Tables.",
+      "Figure out what was dropped and format it as a flag.",
+      "xkcd.com/327",
+      ""
+    ]);
+  }
+
+
+  else if (cmd === "get_image" && phase === 3) {
+    print([
+      "Here's an image for you to investigate...",
+      "Try looking *deeper*. Metadata matters.",
+    ]);
+    window.open("image.png", "_blank"); // You’ll host/upload this image
+  }
 
   else if (cmd.startsWith("submit")) {
     const parts = cmd.split(" ");
@@ -59,7 +80,8 @@ function handleCommand(cmd) {
     if (submittedFlag === flag1 && phase === 1) {
       print([
         "First Flag Completed!",
-        "Take a screen shot of this and send to admins on the group"
+        "Take a screenshot and send it to the admins.",
+        "You're ready for the next step. Type 'sql_hint' to proceed."
       ]);
       phase = 2;
     }
@@ -68,7 +90,8 @@ function handleCommand(cmd) {
     else if (submittedFlag === flag2 && phase === 2) {
       print([
         "Second Flag Verified!",
-        "Great work detective, you're nearly there..."
+        "Clever detective work!",
+        "Now, can you find the final piece? Type 'get_image' to continue."
       ]);
       phase = 3;
     }
@@ -77,8 +100,8 @@ function handleCommand(cmd) {
     else if (submittedFlag === flag3 && phase === 3) {
       print([
         "✅ All flags submitted!",
-        "Access Granted to Mr.X's Vault.",
-        "You have successfully completed the CyberSecurity recruitment!"
+        "You have outsmarted the digital veil.",
+        "Access Granted to Mr.X's Vault. Recruitment Complete!"
       ]);
       phase = 4;
     }
@@ -88,33 +111,16 @@ function handleCommand(cmd) {
     }
   }
 
-  else if (cmd === "download_logs" && phase === 2) {
-    print([
-      "Downloading leaked_logs.zip...",
-      "Use your terminal tools to grep for keywords.",
-      "You're looking for a bank name connected to illicit transactions.",
-    ]);
-    window.open("logs.zip", "_blank");
-  }
-
-  else if (cmd === "dckx") {
-    print([
-      "This would normally get you disqualified, but we'll allow it.",
-      "🧪 Vaccination is important. My 327th son is called Bobby.",
-      "Answer: Robert'); DROP TABLE students;--",
-      "💉 Reference: https://xkcd.com/327",
-      "This is a classic SQL Injection joke. Remember: Never trust user input!"
-    ]);
-  }
-
   else if (cmd === "help") {
     print([
       "Available commands:",
-      "fetch_message     - Download the agent's encrypted message",
-      "download_logs     - Get the logs to investigate (after Flag 1)",
+      "fetch_message     - Download the agent's encrypted message (Flag 1)",
+      "sql_hint          - Get an SQL injection clue (Flag 2)",
+      "get_image         - Download the image to investigate (Flag 3)",
       "submit FLAG       - Submit the decrypted flag (e.g. submit DARKLEAK{...})"
     ]);
   }
+
 
   else {
     print(["Unknown command. Type 'help' for a list of commands."]);

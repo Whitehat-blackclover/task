@@ -3,7 +3,7 @@ const input = document.getElementById("input");
 
 // Flag values
 const flag1 = "DARKLEAK{xavir_kale}";
-const flag2 = "DARKLEAK{little_bobby_tables}";
+const flag2 = "DARKLEAK{DROP TABLE students;--}";
 const flag3 = "DARKLEAK{metadata_reveals_all}";
 
 let phase = 1;

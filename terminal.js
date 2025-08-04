@@ -67,6 +67,8 @@ function handleCommand(cmd) {
     // Flag 2
     else if (submittedFlag === flag2 && phase === 2) {
       print([
+        "Second Flag Verified!",
+        "Great work detective, you're nearly there..."
       ]);
       phase = 3;
     }
@@ -74,6 +76,9 @@ function handleCommand(cmd) {
     // Flag 3
     else if (submittedFlag === flag3 && phase === 3) {
       print([
+        "✅ All flags submitted!",
+        "Access Granted to Mr.X's Vault.",
+        "You have successfully completed the CyberSecurity recruitment!"
       ]);
       phase = 4;
     }
@@ -90,6 +95,16 @@ function handleCommand(cmd) {
       "You're looking for a bank name connected to illicit transactions.",
     ]);
     window.open("logs.zip", "_blank");
+  }
+
+  else if (cmd === "dckx") {
+    print([
+      "This would normally get you disqualified, but we'll allow it.",
+      "🧪 Vaccination is important. My 327th son is called Bobby.",
+      "Answer: Robert'); DROP TABLE students;--",
+      "💉 Reference: https://xkcd.com/327",
+      "This is a classic SQL Injection joke. Remember: Never trust user input!"
+    ]);
   }
 
   else if (cmd === "help") {

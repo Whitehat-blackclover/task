@@ -9,7 +9,7 @@ export default function handler(req, res) {
     // --- Define the flags for each phase ---
     // Storing answers on the backend is crucial for security.
     const flags = {
-      1: "DARKLEAK{pavir_kale}",
+      1: "DARKLEAK{pavier_kale}",
       2: "DARKLEAK{clusterc0der}",
       3: "DARKLEAK{Robert'); DROP TABLE students;--}",
       4: "DARKLEAK{alibaug}"

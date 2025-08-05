@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DarkLeak - Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0d0208;
+      color: #00ff41;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .terminal-window {
+      width: 100%;
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ff41;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      border-bottom: 1px solid #00ff41;
+      padding-bottom: 10px;
+    }
+
+    #terminal {
+      white-space: pre-wrap;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      padding-right: 10px;
+    }
+
+    /* Custom scrollbar for terminal */
+    #terminal::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #terminal::-webkit-scrollbar-track {
+      background: #0d0208;
+    }
+
+    #terminal::-webkit-scrollbar-thumb {
+      background-color: #00ff41;
+      border-radius: 4px;
+    }
+
+    .input-line {
+        display: flex;
+    }
+
+    .prompt {
+        color: #00ff41;
+        margin-right: 10px;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      color: #00ff41;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      width: 100%;
+      outline: none;
+    }
+
+    a {
+      color: #00ff41;
+      text-decoration: underline;
+    }
+
+    .message {
+        margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal-window">
+    <h2>🕵️‍♂️ DarkLeak Terminal</h2>
+    <div id="terminal"></div>
+    <div class="input-line">
+        <span class="prompt">&gt;</span>
+        <input type="text" id="input" autofocus autocomplete="off">
+    </div>
+  </div>
+  <script src="terminal.js"></script>
+</body>
+</html>

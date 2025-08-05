@@ -93,7 +93,7 @@ const processCommand = async (command) => {
             return;
        }
       print("🖼️ Downloading image: get-3 (1).jpg...");
-      window.open("get-3 (1).png", "_blank");
+      window.open("gets-3 (1).png", "_blank");
       break;
 
     case "sql_hint":

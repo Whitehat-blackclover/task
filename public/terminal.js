@@ -92,8 +92,8 @@ const processCommand = async (command) => {
             print("⚠️ This command is for Phase 2 only.");
             return;
        }
-      print("🖼️ Downloading image: get-3 (1).jpg...");
-      window.open("gets-3 (1).png", "_blank");
+      print("🖼️ Downloading image: gets.png...");
+      window.open("gets.png", "_blank");
       break;
 
     case "sql_hint":
